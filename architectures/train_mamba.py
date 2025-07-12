@@ -39,7 +39,7 @@ so I'll spend a bit more time explaining this than usual.
         there are finite number of tokens equally spaced, tokens aren't in "continuous time." So we have to derive 
         the same recurrences, but in discrete time over token space. 
         --> We do this by learning the continuous params, then applying mathematical transformations to discretize. 
-        --> The transformations are A_disc = exp(-A_cont * delta), B_disc = 
+        --> The transformations are A_disc = exp(-A_cont * delta), B_disc = A^{-1}(exp(delta * A) - I)B
         --> While these may seem strange, they are mathematically derived starting with the SSM equations: 
                 d[s(t)]/dt := As(t) + Bx(t)
                 y(t) = C(t)s(t) + D(t)
